@@ -21,9 +21,9 @@
     for x in lines.iter(){
 
         let number_pairs = x
-        .split(" ") //Splits the numbers with spaces between into individual lines
-        .map(|component| component.parse::<u64>().unwrap()) //Converts all the numbers into integers
-        .collect::<Vec<u64>>(); 
+            .split(" ") //Splits the numbers with spaces between into individual lines
+            .map(|component| component.parse::<u64>().unwrap()) //Converts all the numbers into integers
+            .collect::<Vec<u64>>(); 
 
         if number_pairs[0] > number_pairs[1] {
             let diff = number_pairs[0] - number_pairs[1];
