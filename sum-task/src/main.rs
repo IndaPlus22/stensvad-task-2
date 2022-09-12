@@ -21,7 +21,7 @@
          //Viola Söderlund
      let lenght_of_sequence = lines 
          .next().unwrap()                                        // get first line of input
-         .parse::<u64>().unwrap();                               // assuming convertability, convert to unsigned integer
+         .parse::<u32>().unwrap();                               // assuming convertability, convert to unsigned integer
  
      let mut amount_of_numbers_to_add;
      if lenght_of_sequence % 2 == 0 {
@@ -33,17 +33,17 @@
  
      let mut numbers_sequence = lines
          .next().unwrap() //Gets the second line of input with the numbers
+         .trim() //Removes whitespace
          .split(" ") //Splits the numbers with spaces between into individual lines
-         .map(|component| component.parse::<u64>().unwrap()) //Converts all the numbers into integers
-         .collect::<Vec<u64>>(); 
+         .map(|component| component.parse::<u32>().unwrap()) //Converts all the numbers into integers
+         .collect::<Vec<u32>>(); 
      numbers_sequence.sort(); //Sort from smalest to largest number
      numbers_sequence.reverse(); //Reverse the order
  
-     let mut sum: u64 = 0;
+     let mut sum: u32 = 0;
      for x in 0..amount_of_numbers_to_add {
          sum += numbers_sequence[x as usize];
      } 
-       
  
      eprintln!("Kattis skips this comment!");
      println!("{}", sum);
